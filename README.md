@@ -1,10 +1,15 @@
 # OnlineGrimoire
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+Remember to global and local install Angular CLI, and the npm install your node modules.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Running Backend
+
+The backend will be done using basic express likely with an SQL database (though TBD). To run basic server `cd backend` then  `node index.js`
 
 ## Code scaffolding
 
