@@ -19,9 +19,16 @@ const port = process.env.PORT || 8080;
 const app = express()
   .use(cors())
   .use(bodyParser.json())
+  .use(express.static('./dist/<name-on-package.json>'));
   //.use('/session', sessionrouter(connection)) //using routers
   
 //start server
+
+app.get('/*', function(req, res) {
+  res.sendFile('index.html', {root: 'dist/<name-on-package.json>/'}
+);
+});
+
 app.listen(port, () => {
   console.log(`Express server listening on port ${port}`);
 });
