@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+.body{
+    background-color: gainsboro;
+}
+
+.navbar-logo{
+    width: 30%;
+    margin-left: 10%;
+    margin-top:2%;
+    margin-bottom:2%;
+}
+
+.top-nav-app{
+    background-color: white!important;
+    border-bottom: 2px darkgrey solid;
+    box-shadow: 0px 10px 5px darkgray;
+    
+}
+
+.input-box{
+    background-color: white;
+    border: 1px solid darkgrey;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: 10px 10px 5px darkgrey;
+}
+
+.align-l{
+    text-align: left;
+}
+
+.align-c{
+    text-align: center;
+}
+
+.align-r{
+    text-align: right;
+}
