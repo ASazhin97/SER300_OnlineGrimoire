@@ -2,7 +2,7 @@
 //Install express server
 const express = require('express');
 const path = require('path');
-const {Client} = require('pg');
+const Client = require('pg');
 // const mysql = require('mysql');
 
 //SQL CONNECTION
