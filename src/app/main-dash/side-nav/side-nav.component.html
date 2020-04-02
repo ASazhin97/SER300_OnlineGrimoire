@@ -1,11 +1,11 @@
 <div class="col-lg-12 side-nav">
-    <div class="row">
+    <div class="row" (click) = "switchDash(0);">
         <div class="col-lg-12">
             <h4><b>Dashboard</b></h4>
         </div>
         
     </div>
-    <div *ngFor="let game of NoteFiles; let i = index" class="row">
+    <div *ngFor="let game of NoteFiles; let i = index" class="row" (click) = "switchDash(game.id);">
         <div class="col-lg-9">
             <h4><b>{{game.Name}}</b></h4>
         </div>
