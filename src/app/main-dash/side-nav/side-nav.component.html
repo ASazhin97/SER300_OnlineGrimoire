@@ -1,20 +1,30 @@
-<div class="col-lg-12 side-nav">
-    <div class="row">
-        <div class="col-lg-12">
-            <h4><b>Dashboard</b></h4>
+<div class="col-md-12 side-nav">
+    <div class="row" (click) = "switchDash(0);">
+        <div class="col-lg-12 align-l">
+            <div class="btn btn-default nav-btn align-l" >
+                <h4><b>Dashboard</b></h4>
+            </div>
         </div>
         
     </div>
-    <div *ngFor="let game of NoteFiles; let i = index" class="row">
-        <div class="col-lg-9">
-            <h4><b>{{game.Name}}</b></h4>
+    <div class="row" *ngFor="let game of NoteFiles; let i = index" (click) = "switchDash(game.id);" >
+        <div class="col-lg-12">
+            <div class="btn btn-default nav-btn" >
+                <div class="row">
+                    <div class="col-lg-8 align-l">
+                        <h4><b>{{game.Name}}</b></h4>
+                    </div>
+                    <div class="col-lg-4 align-r">
+                        <h4>{{game.HoursPlayed}}</h4>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-2">
-            <h4>{{game.HoursPlayed}}</h4>
-        </div>
+        
     </div>
+    
 
-    <div class="row">
+    <div class="row" class="add-game-button">
         <div class="col-lg-12 align-r">
             <a href="#">Add Game +</a>
         </div>

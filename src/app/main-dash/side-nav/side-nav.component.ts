@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardManagerService } from '../dashboard-manager.service';
+import { MainDashComponent } from '../main-dash.component'
 
 @Component({
   selector: 'app-side-nav',
@@ -7,12 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
   NoteFiles = [];
-  constructor() { }
+  constructor(private DashManager: DashboardManagerService, private dash: MainDashComponent) { }
 
   ngOnInit(): void {
     //get files from database, but using just some stuff to make it look okay right now
-    this.NoteFiles.push({Name:"Witcher", HoursPlayed:64, Notes: "Looking for Yennefer"});
+    this.NoteFiles = this.DashManager.getNotes();
 
+  }
+
+  switchDash(id){
+    this.dash.setCurrentShow(id);
   }
 
 }
