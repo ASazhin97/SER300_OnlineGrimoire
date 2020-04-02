@@ -6,11 +6,15 @@
             <app-side-nav></app-side-nav>
         </div>
         <div class="col-lg-10">
+            <div class="row" *ngIf="dash">
+               THIS WILL ONLY SHOW IF ITS ON DASH
+            </div>
             <div class="row">
                 <app-general-notes></app-general-notes>
             </div>
             <div class="row">
-                <app-goal-notes></app-goal-notes>
+                <!--<app-goal-notes></app-goal-notes>-->
+                
             </div>
         </div>
     </div>
