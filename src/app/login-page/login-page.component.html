@@ -1,13 +1,4 @@
-<div class="row">
-    <div class="col-lg-12" >
-        <nav class="navbar navbar-light bg-light top-nav-app">
-            <a class="navbar-brand" [routerLink]="'login'">
-              <img src="../../assets/OnlineGrimorePNG.png" class="d-inline-block align-top navbar-logo" alt="">
-            </a>
-          </nav>
-    </div>
-</div>
-
+<app-nav-bar></app-nav-bar>
 <div class="row login-row">
     <div class="col-lg-6 offset-lg-3 col-xs-12">
         <div class="input-box align-c">
@@ -21,7 +12,7 @@
                     <div class="row login-row">
                         <h4>Username</h4>
                     </div>
-                    <input class="input-group" placeholder="Devistator">
+                    <input class="input-group" placeholder="Devistator" [(ngModel)] = "user.username">
                 </div>
             </div>
             <div class="row">
@@ -29,19 +20,19 @@
                     <div class="row login-row">
                         <h4>Password</h4>
                     </div>
-                    <input class="input-group" placeholder="************">
+                    <input class="input-group" placeholder="************" [(ngModel)] = "user.password">
                 </div>
             </div>
 
             <div class="row login-row last-row">
                 <div class="col-lg-12 align-c">
-                    <button class="btn btn-primary">Login</button>
+                    <button class="btn btn-primary" (click) = "login(user.username, user.password);">Login</button>
                 </div>
             </div>
         </div>
         <div class="row login-row">
             <div class="col-lg-12 align-c">
-                <a href="add router link">Don't have an account? Sign Up for Free!</a>
+                <a [routerLink]="['/signup']">Don't have an account? Sign Up for Free!</a>
             </div>
         </div>
         

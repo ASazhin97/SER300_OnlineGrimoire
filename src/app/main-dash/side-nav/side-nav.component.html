@@ -1,0 +1,23 @@
+<div class="col-lg-12 side-nav">
+    <div class="row">
+        <div class="col-lg-12">
+            <h4><b>Dashboard</b></h4>
+        </div>
+        
+    </div>
+    <div *ngFor="let game of NoteFiles; let i = index" class="row">
+        <div class="col-lg-9">
+            <h4><b>{{game.Name}}</b></h4>
+        </div>
+        <div class="col-lg-2">
+            <h4>{{game.HoursPlayed}}</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 align-r">
+            <a href="#">Add Game +</a>
+        </div>
+    </div>
+    
+</div>
