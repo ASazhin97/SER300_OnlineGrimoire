@@ -1,5 +1,6 @@
 # Scrum Cycle 1: 3/30/20
  - dev pulled on 3/30/2020
+ - dev2 pulled on 4/2/2020
 
 # OnlineGrimoire
 
