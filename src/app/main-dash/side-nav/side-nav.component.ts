@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DashboardManagerService } from '../dashboard-manager.service';
+import { DashboardManagerService } from '../dashboard-manager.service'
 import { MainDashComponent } from '../main-dash.component'
 
 @Component({
