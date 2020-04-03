@@ -2,7 +2,7 @@
 //Install express server
 const express = require('express');
 const path = require('path');
-// const {Client} = require('pg');
+const {Client} = require('pg');
 // const mysql = require('mysql');
 
 //SQL CONNECTION
@@ -14,12 +14,12 @@ const path = require('path');
 // });
 
 //postgreSQL Connection
-// const client = new Client({
-//     connectionString: process.env.DATABASE_URL,
-//     ssl: true,
-//   });
+const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+  });
   
-//   client.connect();
+  client.connect();
   
   // client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
   //   if (err) throw err;
