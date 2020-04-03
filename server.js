@@ -3,33 +3,30 @@
 const express = require('express');
 const path = require('path');
 const {Client} = require('pg');
-// const mysql = require('mysql');
+const mysql = require('mysql');
 
-//SQL CONNECTION
+// //SQL CONNECTION
 // const connection = mysql.createConnection({
-//   host     : 'localhost',
-//   user     : 'perfusionist',
-//   password : 'shokugeki',
-//   database : 'perfusion_sim'
+//   host     : 'pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+//   user     : 'o0vt0a320a2xg8qd',
+//   password : 'l6b61466v7zahdgb',
+//   database : 'u7njsrjyrva1zxi9'
 // });
+var connection = mysql.createConnection("mysql://o0vt0a320a2xg8qd:l6b61466v7zahdgb@pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/u7njsrjyrva1zxi9");
 
-//postgreSQL Connection
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: true,
-  });
-  
-  client.connect();
-  
-  client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
-    if (err) throw err;
-    for (let row of res.rows) {
-      console.log(JSON.stringify(row));
+connection.connect();
+
+connection.query(
+  'SELECT * FROM u7njsrjyrva1zxi9.UserCRED ORDER BY ID ASC',
+  (error, results) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(results);
     }
-    client.end();
-  });
+  }
+);
 
-// connection.connect();
 
 const app = express();
 
