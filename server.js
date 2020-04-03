@@ -5,45 +5,27 @@ const path = require('path');
 const {Client} = require('pg');
 const mysql = require('mysql');
 
-//SQL CONNECTION
+// //SQL CONNECTION
 // const connection = mysql.createConnection({
-//   host     : 'mysql://bd58119b476c81:6b5a4c66@us-cdbr-iron-east-01.cleardb.net/heroku_4d22adabde189b1?reconnect=true',
-//   user     : 'kzvhjayrgjmltg',
-//   password : '9069ef59d7db7a5e1ac85fed65c8fda666073a9f5a53b0b286247995a89e3209',
-//   database : 'dbs33mbigk7fj5'
+//   host     : 'pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+//   user     : 'o0vt0a320a2xg8qd',
+//   password : 'l6b61466v7zahdgb',
+//   database : 'u7njsrjyrva1zxi9'
 // });
+var connection = mysql.createConnection("mysql://o0vt0a320a2xg8qd:l6b61466v7zahdgb@pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/u7njsrjyrva1zxi9");
 
-// connection.connect();
+connection.connect();
 
-//postgreSQL Connection
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: true,
-  });
-  
-  client.connect();
-  
-  client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
-    // if (err) {
-    //   console.log("There has been an error connecting to the database");
-    // } else {
-    //   for (let row of res.rows) {
-    //     console.log(JSON.stringify(row));
-    //   }
-    // }
-
-    try{
-      for (let row of res.rows) {
-        console.log(JSON.stringify(row));
-      }
-    } catch (err){
-      console.log("There has been an error connecting to the database");
+connection.query(
+  'SELECT * FROM u7njsrjyrva1zxi9.UserCRED ORDER BY ID ASC',
+  (error, results) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(results);
     }
-
-    
-    client.end();
-  });
-
+  }
+);
 
 
 const app = express();
