@@ -36,7 +36,9 @@ export class DashboardManagerService {
   //commands to database
   AddGame(game){
     console.log("add game to database");
+    game.id = this.NoteFiles.length+1;
     console.log(game);
+    this.NoteFiles.push(game);
   }
 
   DeleteGame(game){

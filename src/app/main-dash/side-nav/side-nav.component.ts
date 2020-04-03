@@ -10,7 +10,7 @@ import { GeneralNotesComponent } from '../general-notes/general-notes.component'
 })
 export class SideNavComponent implements OnInit {
   NoteFiles = [];
-  constructor(private DashManager: DashboardManagerService, private dash: MainDashComponent) { }
+  constructor(private DashManager: DashboardManagerService) { }
 
   ngOnInit(): void {
     //get files from database, but using just some stuff to make it look okay right now
