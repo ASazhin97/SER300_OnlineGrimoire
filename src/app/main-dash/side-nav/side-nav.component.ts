@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardManagerService } from '../dashboard-manager.service'
 import { MainDashComponent } from '../main-dash.component'
+import { GeneralNotesComponent } from '../general-notes/general-notes.component';
 
 @Component({
   selector: 'app-side-nav',
@@ -18,7 +19,7 @@ export class SideNavComponent implements OnInit {
   }
 
   switchDash(id){
-    this.dash.setCurrentShow(id);
+    this.DashManager.setCurr(id);
   }
 
 }

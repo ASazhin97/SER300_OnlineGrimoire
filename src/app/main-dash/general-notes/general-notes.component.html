@@ -1,1 +1,30 @@
-<p>general-notes works!</p>
+<div *ngFor="let game of NoteFiles; let i = index" >
+    <div class="col-lg-12 input-box" [hidden]="!(curr == game.id)">
+        <div class="row">
+            <div class="col-lg-12 align-c">
+                <h3>General Notes</h3>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-lg-8">
+                <h4>{{game.Name}}</h4>
+            </div>
+            <div class="col-lg-4 align-r">
+                <h4>Hours Played: {{game.HoursPlayed}}</h4>
+            </div>
+        </div>
+        <div class="row">
+            <textarea class="form-control notes-text-area" [(ngModel)]="game.Notes"></textarea>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 align-l">
+                <button class="btn btn-danger bottom-btn" (click)="DeleteNotes(game)">Delete All</button>
+            </div>
+            <div class="col-lg-6 align-r">
+                <button class="btn btn-primary bottom-btn" (click)="SaveNotes(game)">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+

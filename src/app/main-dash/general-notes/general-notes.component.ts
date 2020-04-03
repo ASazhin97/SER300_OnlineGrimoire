@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { DashboardManagerService } from '../dashboard-manager.service';
 
 @Component({
   selector: 'app-general-notes',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneralNotesComponent implements OnInit {
 
-  constructor() { }
+  NoteFiles = [];
+  curr = 0;
+  show = false;
+
+  constructor(private DashManager: DashboardManagerService) { }
 
   ngOnInit(): void {
+    this.NoteFiles = this.DashManager.getNotes();
+    //this.setCurr();
+    this.DashManager.currentMessage.subscribe(message => this.curr = parseInt(message));
+  }
+
+  SaveNotes(game){
+    this.DashManager.UpdateGame(game);
+  }
+
+  DeleteNotes(game){
+    this.DashManager.DeleteGame(game);
   }
 
 }
