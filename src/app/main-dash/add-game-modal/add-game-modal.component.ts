@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardManagerService } from '../dashboard-manager.service';
 
 @Component({
   selector: 'app-add-game-modal',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-game-modal.component.css']
 })
 export class AddGameModalComponent implements OnInit {
-
-  constructor() { }
+  game = {
+    Name: '',
+    HoursPlayed: '',
+    Notes: ''
+  };
+  constructor(private DashManager: DashboardManagerService) { }
 
   ngOnInit(): void {
+  }
+
+  SaveGame(game){
+    console.log("saveGame");
+    this.DashManager.AddGame(game);
+    game = {
+      Name: '',
+      HoursPlayed: '',
+      Notes: ''
+    };
   }
 
 }
