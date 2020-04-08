@@ -1,0 +1,52 @@
+.padding {
+  padding-bottom: 2rem;
+}
+
+#intro-paragraph{
+  padding-top: 2rem;
+}
+
+hr {
+  width: 90%;
+  margin-top: 2rem;
+}
+
+#main-header {
+  padding-top: 3.5rem;
+  font-family: cursive;
+}
+
+#form-container{
+  background-image: url('../../assets/openbook.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 95%;
+  height: 95%;
+  border-radius: 25px;
+  padding-top: 1rem;
+  margin-top: 1.2rem;
+}
+
+.form-row {
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  padding-right: 2rem;
+}
+
+#emailInput, #lastNameInput, #confirmPassword {
+  padding-left: 2rem;
+}
+
+.btn {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.btn:hover{
+  background-color: olivedrab;
+}
+
+#submitButton {
+  display: flex;
+  justify-content: center;
+}
