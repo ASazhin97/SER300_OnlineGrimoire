@@ -2,6 +2,10 @@
   padding-bottom: 2rem;
 }
 
+#heading, #disclaimer {
+  text-align: center;
+}
+
 #intro-paragraph{
   padding-top: 2rem;
 }
@@ -33,10 +37,6 @@ hr {
   padding-right: 2rem;
 }
 
-#emailInput, #lastNameInput, #confirmPassword {
-  padding-left: 2rem;
-}
-
 .btn {
   background-color: dodgerblue;
   color: white;
@@ -49,4 +49,5 @@ hr {
 #submitButton {
   display: flex;
   justify-content: center;
+  margin: 1rem;
 }
