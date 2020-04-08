@@ -1,3 +1,78 @@
 <app-nav-bar></app-nav-bar>
-
-<p>signup-page works!</p>
+<form name="contactForm">
+	<div class="container-fluid" id="mainFrame">
+	<div class="container" id="form-container">
+		<div class="row">
+			<div class="col padding" style="text-align: center">
+        <h1 id="main-header"> Unlock the Grimoire </h1>
+        <h5 id="intro-paragraph"> <em>Magick is an art; using reality and the world as its canvas</em></h5>
+        <hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col padding" style="text-align: center">
+				<h4>Please fill out form to completion and review before submission</h4>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="col-xs-12 col-md-6">
+				<label for="firstNameInput">First Name</label>
+				<input type="text" name="firstName" id="firstName" placeholder="First Name" class="form-control" required="true">
+			</div>
+			<div class="col-xs-12 col-md-6" id="lastNameInput">
+				<label for="lastNameInput">Last Name</label>
+				<input type="text" name="lastName" id="lastName" placeholder="Last Name" class="form-control" required="true">
+			</div>
+    </div>
+    <div class="form-row">
+			<div class="col-xs-12 col-md-6">
+				<label for="passwordInput">Create Password</label>
+				<input type="text" name="passwordInput" id="passwordInput" placeholder="Password" class="form-control" required="true">
+			</div>
+			<div class="col-xs-12 col-md-6" id="confirmPassword">
+				<label for="confirmPasswordInput">Confirm Password</label>
+				<input type="text" name="confirmPasswordInput" id="confirmPasswordInput" placeholder="Re-type Password" class="form-control" required="true">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="col-xs-12 col-md-6" id="usernameInput">
+				<label for="userInput">Username</label>
+				<input type="text" name="userInput" id="userInput" placeholder="Username" class="form-control" required="true">
+			</div>
+			<div class="col-xs-12 col-md-6" id="emailInput">
+				<label for="emailInput">Email Address</label>
+				<input type="text" name="emailInput" id="e-mailInput" placeholder="Email Address" class="form-control" required="true">
+			</div>
+    </div>
+    <div class="form-row">
+      <div class="col-xs-12 col-md-6" id="classInput">
+				<label for="classSelection">Select your class</label>
+				<select class="custom-select" id="selections" name="selections" required="true">
+  					<option selected>Select your class</option>
+  					<option value="1">Wizard</option>
+  					<option value="2">Druid</option>
+  					<option value="3">Warlock</option>
+  					<option value="1">Mage</option>
+  					<option value="2">Witch</option>
+  					<option value="3">Shaman</option>
+				</select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <input type="checkbox" name="termsAgreement" id="termsAgreement" required="true"> <em> I agree to the Terms and Conditions</em>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <input type="checkbox" name="emailOffers" id="emailOffers" required="true"> <em> I would like to receive emails about special promotions, updates, and news</em>
+      </div>
+    </div>
+    <div class="form-row" id="submitButton">
+      <div class="row" style="margin: 1em;">
+        <button class="btn button-outline-dark btn-lg" type="submit">Sign Up</button>
+      </div>
+    </div>
+	</div>
+</div>
+</form>
