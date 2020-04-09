@@ -38,12 +38,23 @@ function createRouter(db, dbname) {
                     console.log(error);
                     res.status(500).json({status:'error'});
                 } else {
-                    res.status(200).json({status: 'ok'});
+                    db.query(
+                        'CREATE TABLE `'+token+'` ( `id` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(100) DEFAULT NULL, `HoursPlayed` int(11) DEFAULT NULL, `Notes` longtext, `Goals` longtext, `CurrWeapon` varchar(100) DEFAULT NULL, `CurrWeaponStats` varchar(100) DEFAULT NULL, PRIMARY KEY (`id`))',
+                            (error) => {
+                                if(error){
+                                    console.log(error);
+                                    res.status(500).json({status:'error'});
+                                } else {
+                                    res.status(200).json({status: 'ok databaseok'});
+                                }
+                            }
+                    )
                 }
             }
         )
 
         //create a table for that user
+        
     })
 
     router.get('/login', function(req, res, next) {
