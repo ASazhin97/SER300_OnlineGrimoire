@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServerService } from './server.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'OnlineGrimoire';
+
+  constructor(private server: ServerService){
+    
+  }
 
   //adding comments to the head component
 }

@@ -15,9 +15,10 @@ export class GeneralNotesComponent implements OnInit {
   constructor(private DashManager: DashboardManagerService) { }
 
   ngOnInit(): void {
-    this.NoteFiles = this.DashManager.getNotes();
+    //this.NoteFiles = this.DashManager.getNotes();
     //this.setCurr();
-    this.DashManager.currentMessage.subscribe(message => this.curr = parseInt(message));
+    //this.DashManager.current.subscribe(message => this.curr = parseInt(message));
+    //this.DashManager.Files.subscribe(Array, message => this.NoteFiles = message);
   }
 
   SaveNotes(game){

@@ -15,7 +15,8 @@ function createRouter(db, dbname){
                     res.status(500).json({status: 'error'});
                 } else {
                     console.log(results);
-                    res.status(200).json(results);
+                    //res.status(200).json(results);
+                    res.send(JSON.stringify(results))
                 }
             }
         )

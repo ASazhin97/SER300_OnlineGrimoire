@@ -13,9 +13,14 @@ export class SideNavComponent implements OnInit {
   constructor(private DashManager: DashboardManagerService) { }
 
   ngOnInit(): void {
-    //get files from database, but using just some stuff to make it look okay right now
-    this.NoteFiles = this.DashManager.getNotes();
+    this.DashManager.Files.subscribe(Array, message => this.setNoteFiles(message));
 
+  }
+
+  setNoteFiles(files){
+    console.log("setting files");
+    this.NoteFiles = files;
+    console.log(files);
   }
 
   switchDash(id){

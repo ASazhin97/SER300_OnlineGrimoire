@@ -8,16 +8,15 @@ import { GeneralNotesComponent } from './general-notes/general-notes.component';
   styleUrls: ['./main-dash.component.css']
 })
 export class MainDashComponent implements OnInit {
-  FileNotes = [];
+  NoteFiles = [];
   curr = 0;
   dash = false;
 
   constructor(private DashManager: DashboardManagerService) { }
 
   ngOnInit(): void {
-    this.FileNotes = this.DashManager.getNotes();
     this.setCurrentShow(0);
-    this.DashManager.currentMessage.subscribe(message => this.setCurrentShow(message));
+    //this.DashManager.current.subscribe(message => this.setCurrentShow(message));
   }
 
   setCurrentShow(id){
