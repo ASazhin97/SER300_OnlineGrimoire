@@ -72,6 +72,24 @@ function createRouter(db, dbname){
         }
     })
 
+    router.delete('/delete', function(req, res, next) {
+        token = req.query.t;
+        id = req.query.id;
+        
+
+        db.query(
+            'DELETE FROM '+dbname+'.'+token+' WHERE id = '+id,
+            (error) => {
+                if(error){
+                    console.log(error);
+                    res.status(500).json({status:'error'});
+                } else {
+                    res.status(200).json({status: 'ok'});
+                }
+            }
+        )
+    })
+
     return router;
 }
 
