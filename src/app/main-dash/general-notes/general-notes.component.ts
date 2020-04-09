@@ -27,12 +27,12 @@ export class GeneralNotesComponent implements OnInit {
 
   changeCurrShow(n){
     this.curr = n;
-    console.log("switch show gen notes " + this.curr);
+    //console.log("switch show gen notes " + this.curr);
   }
 
   updateNotes(notes){
     this.NoteFiles = notes;
-    console.log(this.NoteFiles);
+    //console.log(this.NoteFiles);
   }
 
   DeleteNotes(game){
