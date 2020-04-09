@@ -1,11 +1,15 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ServerService } from '../server.service';
+import { ServerService } from './server.service'
+import { timer } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardManagerService {
+  public timer = timer(0, 1000);
+
   //temp using user1
   token = "sometoken"
 
@@ -15,20 +19,21 @@ export class DashboardManagerService {
   private messageSource = new BehaviorSubject('default message');
   current = this.messageSource.asObservable();
 
-  private FilesSource = new BehaviorSubject('second');
+  private FilesSource = new BehaviorSubject('default message');
   Files = this.FilesSource.asObservable();
 
   constructor(private server: ServerService) { 
     //get files from database, but using just some stuff to make it look okay right now
     this.updateNotes();
     this.setCurr(0);
+    this.timer.subscribe(val => this.updateNotes());
   }
 
   updateNotes(){
     this.server.getAllGames(this.token).then((responce: any) => {
       
       this.NoteFiles = responce;
-      console.log(this.NoteFiles);
+      //console.log(this.NoteFiles);
       this.FilesSource.next(this.NoteFiles);
     })
   }
@@ -42,9 +47,8 @@ export class DashboardManagerService {
   }
 
   setCurr(id){
-    //console.log("showing this id: " + id);
     this.currDash = id;
-    //this.messageSource.next(id)
+    this.messageSource.next(id)
   }
   
   //commands to database
