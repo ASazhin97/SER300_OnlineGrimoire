@@ -8,6 +8,7 @@ const mysql = require('mysql');
 
 //routers
 const userrouter = require('./backend/users');
+const dashrouter = require('./backend/dashboard');
 
 // //SQL CONNECTION
 // const connection = mysql.createConnection({
@@ -17,7 +18,7 @@ const userrouter = require('./backend/users');
 //   database : 'u7njsrjyrva1zxi9'
 // });
 var connection = mysql.createConnection("mysql://o0vt0a320a2xg8qd:l6b61466v7zahdgb@pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/u7njsrjyrva1zxi9");
-
+var databasename = "u7njsrjyrva1zxi9";
 connection.connect();
 
 // connection.query(
@@ -36,7 +37,8 @@ const app = express()
   .use(express.static(__dirname + `/dist/OnlineGrimoire`))
   .use(cors())
   .use(bodyParser.json())
-  .use('/users', userrouter(connection, "u7njsrjyrva1zxi9"));
+  .use('/dashboard', dashrouter(connection, databasename))
+  .use('/users', userrouter(connection, databasename));
 
 app.get('*', function(req,res) {
     
