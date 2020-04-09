@@ -1,11 +1,7 @@
 # Scrum Cycle 1: 3/30/20
  - dev pulled on 3/30/2020
- - dev2 pulled on 4/02/2020
+ - dev2 pulled on 4/2/2020
 
-# Scrum Cycle 2: 3/30/20
- - dev3 pulled on 4/06/2020
- - dev4 pulled on 4/08/2020
- 
 # OnlineGrimoire
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.

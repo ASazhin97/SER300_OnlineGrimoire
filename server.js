@@ -1,14 +1,9 @@
 
 //Install express server
 const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
 const path = require('path');
+const {Client} = require('pg');
 const mysql = require('mysql');
-
-//routers
-const userrouter = require('./backend/users');
-const dashrouter = require('./backend/dashboard');
 
 // //SQL CONNECTION
 // const connection = mysql.createConnection({
@@ -18,27 +13,25 @@ const dashrouter = require('./backend/dashboard');
 //   database : 'u7njsrjyrva1zxi9'
 // });
 var connection = mysql.createConnection("mysql://o0vt0a320a2xg8qd:l6b61466v7zahdgb@pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/u7njsrjyrva1zxi9");
-var databasename = "u7njsrjyrva1zxi9";
+
 connection.connect();
 
-// connection.query(
-//   'SELECT * FROM u7njsrjyrva1zxi9.UserCRED ORDER BY ID ASC',
-//   (error, results) => {
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       console.log(results);
-//     }
-//   }
-// );
+connection.query(
+  'SELECT * FROM u7njsrjyrva1zxi9.UserCRED ORDER BY ID ASC',
+  (error, results) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(results);
+    }
+  }
+);
 
 
-const app = express()
-  .use(express.static(__dirname + `/dist/OnlineGrimoire`))
-  .use(cors())
-  .use(bodyParser.json())
-  .use('/dashboard', dashrouter(connection, databasename))
-  .use('/users', userrouter(connection, databasename));
+const app = express();
+
+// Serve only the static files form the dist directory
+app.use(express.static(__dirname + `/dist/OnlineGrimoire`));
 
 app.get('*', function(req,res) {
     
