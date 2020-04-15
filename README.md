@@ -6,6 +6,9 @@
  - dev3 pulled on 4/06/2020
  - dev4 pulled on 4/08/2020
  - dev5 pulled on 4/09/2020
+
+ # Scrum Cycle 3: 4/13/20
+ - dev6 pulled on 4/13/2020
  
 # OnlineGrimoire
 
