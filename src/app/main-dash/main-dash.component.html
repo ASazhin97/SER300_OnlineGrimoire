@@ -8,7 +8,7 @@
         <div class="col-lg-10">
             <div class="row" *ngIf="dash">
                 <div class="col-lg-12">
-                    THIS WILL ONLY SHOW IF ITS ON DASH
+                    <app-dashboard></app-dashboard>
                 </div>
             </div>
             <div class="row">
@@ -16,9 +16,13 @@
                     <app-general-notes></app-general-notes>
                 </div>
             </div>
-            <div class="row">
-                <!--<app-goal-notes></app-goal-notes>-->
-                
+            <div class="row widgets-row">
+                <div class="col-xs-12 col-lg-6">
+                    <app-goal-notes></app-goal-notes>
+                </div>
+                <div class="col-xs-12 col-lg-6">
+                    <app-equipment-notes></app-equipment-notes>
+                </div>
             </div>
         </div>
     </div>
