@@ -19,6 +19,7 @@ export class MainDashComponent implements OnInit {
   ngOnInit(): void {
     this.setCurrentShow(0);
     this.DashManager.current.subscribe(message => this.setCurrentShow(message));
+    this.DashManager.updateToken();
   }
 
   setCurrentShow(id){

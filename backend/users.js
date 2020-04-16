@@ -1,5 +1,5 @@
 const express = require('express');
-const uuid = require("uuid");
+var randtoken = require('rand-token');
 
 function createRouter(db, dbname) {
     const router = express.Router();
@@ -28,7 +28,7 @@ function createRouter(db, dbname) {
         last = req.query.l;
         news = req.query.n;
         email = req.query.e;
-        token = uuid.v4();
+        token = randtoken.generate(16);
         
         //localhost:8080/users/new/?u=user2&p=test2&c=mage&f=terry&l=Test&n=0&e=terry@test.com
         db.query(

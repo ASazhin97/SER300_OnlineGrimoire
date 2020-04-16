@@ -12,7 +12,7 @@ export class DashboardManagerService {
   public timer = timer(0, 1000);
 
   //temp using user1
-  token = "sometoken"
+  token = ""
 
   NoteFiles;
   currDash = 0;
@@ -34,12 +34,19 @@ export class DashboardManagerService {
   }
 
   updateNotes(){
+    console.log(this.token);
     this.server.getAllGames(this.token).then((responce: any) => {
       
       this.NoteFiles = responce;
       //console.log(this.NoteFiles);
       this.FilesSource.next(this.NoteFiles);
     })
+  }
+
+  updateToken(){
+    this.token = this.auth.getToken();
+    
+    this.updateNotes();
   }
 
   getNotes(){
