@@ -1,17 +1,15 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ServerService } from '../server.service'
-import { timer } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardManagerService {
-  public timer = timer(0, 1000);
-
   //temp using user1
-  token = "sometoken"
+  token = ""
 
   NoteFiles;
   currDash = 0;
@@ -19,23 +17,31 @@ export class DashboardManagerService {
   private messageSource = new BehaviorSubject('default message');
   current = this.messageSource.asObservable();
 
-  private FilesSource = new BehaviorSubject('default message');
+  private FilesSource = new BehaviorSubject([]);
   Files = this.FilesSource.asObservable();
 
-  constructor(private server: ServerService) { 
+  constructor(private server: ServerService,
+              private auth: AuthService) { 
     //get files from database, but using just some stuff to make it look okay right now
+    this.token = this.auth.getToken();
+
     this.updateNotes();
     this.setCurr(0);
-    this.timer.subscribe(val => this.updateNotes());
   }
 
   updateNotes(){
+    console.log(this.token);
     this.server.getAllGames(this.token).then((responce: any) => {
       
       this.NoteFiles = responce;
       //console.log(this.NoteFiles);
       this.FilesSource.next(this.NoteFiles);
     })
+  }
+
+  updateToken(){
+    this.token = this.auth.getToken();
+    this.updateNotes();
   }
 
   getNotes(){
