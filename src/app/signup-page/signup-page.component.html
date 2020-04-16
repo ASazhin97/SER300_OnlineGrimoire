@@ -1,5 +1,5 @@
 <app-nav-bar></app-nav-bar>
-<form name="contactForm">
+<div name="contactForm">
 	<div class="container-fluid" id="mainFrame">
 	<div class="container" id="form-container">
 		<div class="row">
@@ -17,44 +17,44 @@
 		<div class="form-row">
 			<div class="col-xs-12 col-md-6">
 				<label for="firstNameInput">First Name</label>
-				<input type="text" name="firstName" id="firstName" placeholder="First Name" class="form-control" required="true">
+				<input type="text" name="firstName" id="firstName" placeholder="First Name" class="form-control" [(ngModel)]="newUser.FirstName">
 			</div>
 			<div class="col-xs-12 col-md-6" id="lastNameInput">
 				<label for="lastNameInput">Last Name</label>
-				<input type="text" name="lastName" id="lastName" placeholder="Last Name" class="form-control" required="true">
+				<input type="text" name="lastName" id="lastName" placeholder="Last Name" class="form-control" [(ngModel)]="newUser.LastName">
 			</div>
     </div>
     <div class="form-row">
 			<div class="col-xs-12 col-md-6">
 				<label for="passwordInput">Create Password</label>
-				<input type="text" name="passwordInput" id="passwordInput" placeholder="Password" class="form-control" required="true">
+				<input type="text" name="passwordInput" id="passwordInput" placeholder="Password" class="form-control" [(ngModel)]="newUser.Password">
 			</div>
 			<div class="col-xs-12 col-md-6" id="confirmPassword">
 				<label for="confirmPasswordInput">Confirm Password</label>
-				<input type="text" name="confirmPasswordInput" id="confirmPasswordInput" placeholder="Re-type Password" class="form-control" required="true">
+				<input type="text" name="confirmPasswordInput" id="confirmPasswordInput" placeholder="Re-type Password" class="form-control">
 			</div>
 		</div>
 		<div class="form-row">
 			<div class="col-xs-12 col-md-6" id="usernameInput">
 				<label for="userInput">Username</label>
-				<input type="text" name="userInput" id="userInput" placeholder="Username" class="form-control" required="true">
+				<input type="text" name="userInput" id="userInput" placeholder="Username" class="form-control" [(ngModel)]="newUser.Username">
 			</div>
 			<div class="col-xs-12 col-md-6" id="emailInput">
 				<label for="emailInput">Email Address</label>
-				<input type="text" name="emailInput" id="e-mailInput" placeholder="Email Address" class="form-control" required="true">
+				<input type="text" name="emailInput" id="e-mailInput" placeholder="Email Address" class="form-control" [(ngModel)]="newUser.Email">
 			</div>
     </div>
     <div class="form-row">
       <div class="col-xs-12 col-md-6" id="classInput">
 				<label for="classSelection">Select your class</label>
-				<select class="custom-select" id="selections" name="selections" required="true">
+				<select class="custom-select" id="selections" name="selections" [(ngModel)]="newUser.Class">
   					<option selected>Select your class</option>
-  					<option value="1">Wizard</option>
-  					<option value="2">Druid</option>
-  					<option value="3">Warlock</option>
-  					<option value="1">Mage</option>
-  					<option value="2">Witch</option>
-  					<option value="3">Shaman</option>
+  					<option value="Wizard">Wizard</option>
+  					<option value="Druid">Druid</option>
+  					<option value="Warlock">Warlock</option>
+  					<option value="Mage">Mage</option>
+  					<option value="Witch">Witch</option>
+  					<option value="Shaman">Shaman</option>
 				</select>
       </div>
     </div>
@@ -65,12 +65,12 @@
     </div>
     <div class="form-row">
       <div class="col-md-12">
-        <input type="checkbox" name="emailOffers" id="emailOffers" required="true"> <em> I would like to receive emails about special promotions, updates, and news</em>
+        <input type="checkbox" name="emailOffers" id="emailOffers" [(ngModel)]="newUser.ReceiveNews"> <em> I would like to receive emails about special promotions, updates, and news</em>
       </div>
     </div>
     <div class="form-row" id="submitButton">
-        <button class="btn button-outline-dark btn-lg" type="submit">Sign Up</button>
+        <button class="btn button-outline-dark btn-lg" (click)="submit(newUser);">Sign Up</button>
     </div>
 	</div>
 </div>
-</form>
+</div>
