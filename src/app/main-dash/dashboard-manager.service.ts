@@ -2,6 +2,7 @@ import { Injectable, EventEmitter, Output } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ServerService } from '../server.service'
 import { timer } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 
 
 @Injectable({
@@ -22,8 +23,11 @@ export class DashboardManagerService {
   private FilesSource = new BehaviorSubject('default message');
   Files = this.FilesSource.asObservable();
 
-  constructor(private server: ServerService) { 
+  constructor(private server: ServerService,
+              private auth: AuthService) { 
     //get files from database, but using just some stuff to make it look okay right now
+    this.token = this.auth.getToken();
+
     this.updateNotes();
     this.setCurr(0);
     this.timer.subscribe(val => this.updateNotes());

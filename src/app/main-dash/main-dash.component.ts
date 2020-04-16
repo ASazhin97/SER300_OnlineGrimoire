@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardManagerService } from './dashboard-manager.service';
 import { GeneralNotesComponent } from './general-notes/general-notes.component';
+import { ServerService } from '../server.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-main-dash',

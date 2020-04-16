@@ -32,13 +32,13 @@ function createRouter(db, dbname) {
         
         //localhost:8080/users/new/?u=user2&p=test2&c=mage&f=terry&l=Test&n=0&e=terry@test.com
         db.query(
-            'INSERT INTO ' +dbname+ '.UserCRED (Username, Password, SessionToken, class, first_name, last_name, receiveNews, email) VALUES ( \"'+username+'\", \"'+password+'\",\"'+token+'\", \"'+userclass+'\", \"'+first+'\", \"'+last+'\", '+news+', \"'+email+'\");',
+            'INSERT INTO ' +dbname+ '.UserCRED (Username, Password, TokenID, class, first_name, last_name, receiveNews, email) VALUES ( \"'+username+'\", \"'+password+'\",\"'+token+'\", \"'+userclass+'\", \"'+first+'\", \"'+last+'\", '+news+', \"'+email+'\");',
             (error) => {
                 if(error){
                     console.log(error);
                     res.status(500).json({status:'error'});
                 } else {
-                    db.query(
+                    db.query( //create table for new user
                         'CREATE TABLE `'+token+'` ( `id` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(100) DEFAULT NULL, `HoursPlayed` int(11) DEFAULT NULL, `Notes` longtext, `Goals` longtext, `CurrWeapon` varchar(100) DEFAULT NULL, `CurrWeaponStats` varchar(100) DEFAULT NULL, PRIMARY KEY (`id`))',
                             (error) => {
                                 if(error){
@@ -53,7 +53,7 @@ function createRouter(db, dbname) {
             }
         )
 
-        //create a table for that user
+        
         
     })
 
@@ -62,7 +62,7 @@ function createRouter(db, dbname) {
         pass = req.query.p;
 
         db.query(
-            'SELECT SessionToken FROM ' +dbname+'.UserCRED WHERE Username = \"'+name+'\" AND Password = \"'+pass+'\"',
+            'SELECT TokenID FROM ' +dbname+'.UserCRED WHERE Username = \"'+name+'\" AND Password = \"'+pass+'\"',
                 (error, results) => {
                     if (error) {
                         console.log(error);
@@ -79,7 +79,7 @@ function createRouter(db, dbname) {
         token = req.query.t;
 
         db.query(
-            'SELECT SessionToken FROM ' +dbname+ '.UserCRED WHERE SessionToken = \"'+token+'\"',
+            'SELECT TokenID FROM ' +dbname+ '.UserCRED WHERE TokenID = \"'+token+'\"',
             (error, results) => {
                 if (error) {
                     console.log(error);
