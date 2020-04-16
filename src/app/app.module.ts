@@ -13,6 +13,8 @@ import { SideNavComponent } from './main-dash/side-nav/side-nav.component';
 import { GeneralNotesComponent } from './main-dash/general-notes/general-notes.component';
 import { GoalNotesComponent } from './main-dash/goal-notes/goal-notes.component';
 import { AddGameModalComponent } from './main-dash/add-game-modal/add-game-modal.component';
+import { DashboardComponent } from './main-dash/dashboard/dashboard.component';
+import { EquipmentNotesComponent } from './main-dash/equipment-notes/equipment-notes.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { AddGameModalComponent } from './main-dash/add-game-modal/add-game-modal
     SideNavComponent,
     GeneralNotesComponent,
     GoalNotesComponent,
-    AddGameModalComponent
+    AddGameModalComponent,
+    DashboardComponent,
+    EquipmentNotesComponent
   ],
   imports: [
     BrowserModule,
