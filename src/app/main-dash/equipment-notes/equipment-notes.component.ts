@@ -1,21 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DashboardManagerService } from '../dashboard-manager.service';
 
 @Component({
-  selector: 'app-general-notes',
-  templateUrl: './general-notes.component.html',
-  styleUrls: ['./general-notes.component.css']
+  selector: 'app-equipment-notes',
+  templateUrl: './equipment-notes.component.html',
+  styleUrls: ['./equipment-notes.component.css']
 })
-export class GeneralNotesComponent implements OnInit {
-
+export class EquipmentNotesComponent implements OnInit {
   NoteFiles = [];
   curr = 0;
+
 
   constructor(private DashManager: DashboardManagerService) { }
 
   ngOnInit(): void {
-    //this.NoteFiles = this.DashManager.getNotes();
-    //this.setCurr();
     this.DashManager.current.subscribe(message => this.changeCurrShow(message));
     this.DashManager.Files.subscribe(message => this.updateNotes(message));
   }

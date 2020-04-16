@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ServerService } from './server.service'
+import { ServerService } from '../server.service'
 import { timer } from 'rxjs';
 
 
