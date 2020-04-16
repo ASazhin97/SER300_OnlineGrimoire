@@ -1,7 +1,6 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ServerService } from '../server.service'
-import { timer } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 
 
@@ -18,7 +17,7 @@ export class DashboardManagerService {
   private messageSource = new BehaviorSubject('default message');
   current = this.messageSource.asObservable();
 
-  private FilesSource = new BehaviorSubject('default message');
+  private FilesSource = new BehaviorSubject([]);
   Files = this.FilesSource.asObservable();
 
   constructor(private server: ServerService,
