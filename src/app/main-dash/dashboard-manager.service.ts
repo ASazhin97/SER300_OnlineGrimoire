@@ -9,8 +9,6 @@ import { AuthService } from '../auth/auth.service';
   providedIn: 'root'
 })
 export class DashboardManagerService {
-  public timer = timer(0, 1000);
-
   //temp using user1
   token = ""
 
@@ -30,7 +28,6 @@ export class DashboardManagerService {
 
     this.updateNotes();
     this.setCurr(0);
-    this.timer.subscribe(val => this.updateNotes());
   }
 
   updateNotes(){
@@ -45,7 +42,6 @@ export class DashboardManagerService {
 
   updateToken(){
     this.token = this.auth.getToken();
-    
     this.updateNotes();
   }
 
