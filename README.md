@@ -9,6 +9,9 @@
 
  # Scrum Cycle 3: 4/13/20
  - dev6 pulled on 4/13/2020
+
+ # Scrum Cycle 4: 4/20/20
+ - dev7 pulled on 4/20/20
  
 # OnlineGrimoire
 
