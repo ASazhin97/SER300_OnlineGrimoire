@@ -39,7 +39,7 @@ function createRouter(db, dbname) {
                     res.status(500).json({status:'error'});
                 } else {
                     db.query( //create table for new user
-                        'CREATE TABLE `'+token+'` ( `id` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(100) DEFAULT NULL, `HoursPlayed` int(11) DEFAULT NULL, `Notes` longtext, `Goals` longtext, `CurrWeapon` varchar(100) DEFAULT NULL, `CurrWeaponStats` varchar(100) DEFAULT NULL, PRIMARY KEY (`id`))',
+                        'CREATE TABLE `'+token+'` ( `id` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(100) DEFAULT NULL, `HoursPlayed` int(11) DEFAULT NULL, `Notes` longtext, `Goals` longtext, `CurrWeapon` varchar(100) DEFAULT NULL, `CurrWeaponStats` varchar(100) DEFAULT NULL, `MainGoal` longtext, `LastEdit` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, PRIMARY KEY (`id`))',
                             (error) => {
                                 if(error){
                                     console.log(error);

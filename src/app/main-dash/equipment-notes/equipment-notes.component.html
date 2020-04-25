@@ -1,5 +1,18 @@
 <div *ngFor="let game of NoteFiles; let i = index" >
     <div class="col-lg-12 input-box" [hidden]="(curr != game.id)">
         <p>equipment notes for {{game.Name}}</p>
+
+         
+    </div>
+
+       <!--ADDING BUTTON HERE FOR DELETING GAME-->
+    <div class="row del-row" [hidden]="(curr != game.id)">
+        <div class="col-lg-12 align-r">
+            <button (click)="DeleteNotes(game)" class="btn btn-danger">
+                DELETE ALL NOTES
+            </button>
+        </div>
     </div>
 </div>
+
+

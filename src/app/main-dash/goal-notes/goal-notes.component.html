@@ -1,5 +1,29 @@
 <div *ngFor="let game of NoteFiles; let i = index" >
     <div class="col-lg-12 input-box" [hidden]="(curr != game.id)">
-        <p>goal notes for {{game.Name}}</p>
+        <div class="row">
+            <div class="col-lg-12 align-c">
+                <h3>Goals</h3>
+            </div>
+            
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-lg-12 form-group">
+                <label>Main Goal</label>
+                <textarea class="form-control txt-goals" rows=2 [(ngModel)]="game.MainGoal"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 form-group">
+                <label>Goals</label>
+                <textarea class="form-control txt-goals" rows=5 [(ngModel)]="game.Goals"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 align-r">
+                <button style="margin-bottom:1%;" class="btn btn-primary btn-save" (click)="SaveGoals(game);">Save</button>
+            </div>
+        </div>
     </div>
+    
 </div>
