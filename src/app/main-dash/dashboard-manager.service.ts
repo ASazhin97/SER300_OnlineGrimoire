@@ -68,6 +68,7 @@ export class DashboardManagerService {
     console.log("delete Game from database")
     console.log(game);
     this.server.deleteGame(this.token, game.id);
+    this.updateNotes();
   }
 
   UpdateGame(game, field, data){
