@@ -47,11 +47,11 @@ export class ServerService {
   }
 
   public updateGame(t, id, f, d){
-    return this.request('PUT', `${environment.serverUrl}/dashboard/new/?t=`+t+`&id=`+id+`&f=`+f+`&d=`+d);
+    return this.request('PUT', `${environment.serverUrl}/dashboard/update/?t=`+t+`&id=`+id+`&f=`+f+`&d=`+d);
   }
 
   public deleteGame(t, id){
-    return this.request('DELETE', `${environment.serverUrl}/dashboard/all/?t=`+t+`&id=`+id);
+    return this.request('DELETE', `${environment.serverUrl}/dashboard/delete/?t=`+t+`&id=`+id);
   }
 }
 
