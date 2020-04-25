@@ -1,1 +1,11 @@
-<p>dashboard works!</p>
+
+<div class="row">
+    <div class="card dash-card" *ngFor="let gameCard of NoteFiles; let i = index" (click) = "switchDash(gameCard.id);" >
+        <img class="card-img-top" src="../../../assets/no-image.jpg">
+        <div class="card-body">
+          <h5 class="card-title">{{gameCard.Name}}</h5>
+          <p class="card-text" *ngIf="!gameCard.Notes">No Notes yet! Click to start adding them!</p>
+          <p class="card-text">{{gameCard.Notes}}</p>
+        </div>
+      </div>
+</div>
