@@ -18,8 +18,8 @@ export class EquipmentNotesComponent implements OnInit {
     this.DashManager.Files.subscribe(message => this.updateNotes(message));
   }
 
-  SaveNotes(game){
-    this.DashManager.UpdateGame(game);
+  SaveNotes(game, field, data){
+    this.DashManager.UpdateGame(game, field, data);
   }
 
   changeCurrShow(n){
