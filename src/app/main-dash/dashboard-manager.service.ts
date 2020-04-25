@@ -71,8 +71,10 @@ export class DashboardManagerService {
   }
 
   UpdateGame(game, field, data){
-    console.log("update game in database")
+    console.log("update game in database FROM DASHBOARD")
     console.log(game);
+    this.server.updateGame(this.token, game.id, field, data);
+    this.updateNotes();
   }
 
 }

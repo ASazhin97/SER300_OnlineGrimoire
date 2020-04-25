@@ -17,8 +17,9 @@ export class GoalNotesComponent implements OnInit {
     this.DashManager.Files.subscribe(message => this.updateNotes(message));
   }
 
-  SaveNotes(game, field, data){
-    this.DashManager.UpdateGame(game, field, data);
+  SaveGoals(game){
+    this.DashManager.UpdateGame(game, "Goals", game.Goals);
+    this.DashManager.UpdateGame(game, "MainGoal", game.MainGoal);
   }
 
   changeCurrShow(n){
