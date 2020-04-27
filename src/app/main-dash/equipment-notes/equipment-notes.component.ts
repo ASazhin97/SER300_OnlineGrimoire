@@ -36,4 +36,9 @@ export class EquipmentNotesComponent implements OnInit {
     this.DashManager.DeleteGame(game);
   }
 
+  SaveEquipment(game){
+    this.DashManager.UpdateGame(game, "CurrWeapon", game.CurrWeapon);
+    this.DashManager.UpdateGame(game, "CurrWeaponStats", game.CurrWeaponStats);
+  }
+
 }
