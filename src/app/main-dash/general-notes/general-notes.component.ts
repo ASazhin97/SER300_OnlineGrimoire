@@ -38,4 +38,10 @@ export class GeneralNotesComponent implements OnInit {
     this.DashManager.DeleteGame(game);
   }
 
+  SaveGeneral(game){
+    this.DashManager.UpdateGame(game, "HoursPlayed", game.HoursPlayed);
+    this.DashManager.UpdateGame(game, "Notes", game.Notes);
+  }
+
+
 }

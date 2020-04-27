@@ -11,11 +11,26 @@
                 <h4>{{game.Name}}</h4>
             </div>
             <div class="col-lg-4 align-r">
-                <h4>Hours Played: {{game.HoursPlayed}}</h4>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <h4>Hours Played:</h4>
+                    </div>
+                    <div class="col-lg-7">
+                        <input type="number" class="form-control" [(ngModel)]="game.HoursPlayed">
+                    </div>
+                    
+                    
+                </div>
+                
             </div>
         </div>
         <div class="row">
             <textarea class="form-control notes-text-area" [(ngModel)]="game.Notes"></textarea>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 align-r">
+                <button class="btn btn-primary btn-save" (click)="SaveGeneral(game);">Save</button>
+            </div>
         </div>
     </div>
 </div>
