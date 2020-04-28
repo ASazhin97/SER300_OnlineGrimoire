@@ -30,7 +30,7 @@
     "rand-token": "^1.0.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "typescript": "~3.7.5",
+    "typescript": "~3.8.3",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
@@ -52,7 +52,7 @@
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
-    "typescript": "~3.7.5"
+    "typescript": "~3.8.3"
   },
   "engines": {
     "node": "12.14.1",
